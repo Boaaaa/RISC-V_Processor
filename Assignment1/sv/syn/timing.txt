@@ -1,0 +1,200 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'PROCESSOR' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PROCESSOR
+Version: S-2021.06-SP4
+Date   : Thu Feb 22 18:23:58 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: mem_stage/u_RD_REG/dataout_reg[3]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: if_stage/regpc/dataout_reg[31]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PROCESSOR          5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  mem_stage/u_RD_REG/dataout_reg[3]/CK (DFF_X1)           0.00 #     0.00 r
+  mem_stage/u_RD_REG/dataout_reg[3]/Q (DFF_X1)            0.09       0.09 f
+  mem_stage/u_RD_REG/regout[3] (reg32_BITS5_3)            0.00       0.09 f
+  mem_stage/RD_MEM[3] (MEM)                               0.00       0.09 f
+  exe_stage/RD_MEM[3] (EXE)                               0.00       0.09 f
+  exe_stage/u_SELGEN_0_RS2/B[3] (SELGEN_2)                0.00       0.09 f
+  exe_stage/u_SELGEN_0_RS2/U8/Z (XOR2_X1)                 0.07       0.16 f
+  exe_stage/u_SELGEN_0_RS2/U1/ZN (OR3_X1)                 0.09       0.25 f
+  exe_stage/u_SELGEN_0_RS2/U10/ZN (NOR2_X1)               0.03       0.28 r
+  exe_stage/u_SELGEN_0_RS2/OUT (SELGEN_2)                 0.00       0.28 r
+  exe_stage/U4/ZN (AND3_X1)                               0.06       0.35 r
+  exe_stage/u_MUX_RF_B_MEM/SEL (MUX21_5)                  0.00       0.35 r
+  exe_stage/u_MUX_RF_B_MEM/U3/Z (CLKBUF_X3)               0.07       0.41 r
+  exe_stage/u_MUX_RF_B_MEM/U2/ZN (INV_X2)                 0.06       0.47 f
+  exe_stage/u_MUX_RF_B_MEM/U53/ZN (AOI22_X1)              0.06       0.53 r
+  exe_stage/u_MUX_RF_B_MEM/U7/ZN (INV_X1)                 0.02       0.56 f
+  exe_stage/u_MUX_RF_B_MEM/OUT[4] (MUX21_5)               0.00       0.56 f
+  exe_stage/u_MUX_RST1_EXE/A[4] (MUX21_4)                 0.00       0.56 f
+  exe_stage/u_MUX_RST1_EXE/U12/ZN (AOI22_X1)              0.04       0.60 r
+  exe_stage/u_MUX_RST1_EXE/U11/ZN (INV_X1)                0.03       0.63 f
+  exe_stage/u_MUX_RST1_EXE/OUT[4] (MUX21_4)               0.00       0.63 f
+  exe_stage/u_MUX_IMM_RS2/A[4] (MUX31_1)                  0.00       0.63 f
+  exe_stage/u_MUX_IMM_RS2/U16/ZN (INV_X1)                 0.03       0.65 r
+  exe_stage/u_MUX_IMM_RS2/U1/ZN (OAI222_X1)               0.06       0.71 f
+  exe_stage/u_MUX_IMM_RS2/OUT[4] (MUX31_1)                0.00       0.71 f
+  exe_stage/u_ALU/B[4] (ALU)                              0.00       0.71 f
+  exe_stage/u_ALU/u_ALU_IN_GEN1/IN[4] (ALU_IN_GEN_1)      0.00       0.71 f
+  exe_stage/u_ALU/u_ALU_IN_GEN1/U53/ZN (INV_X1)           0.07       0.78 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/A[4] (ALU_IN_GEN_1_DW01_inc_0)
+                                                          0.00       0.78 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1/ZN (AND4_X1)
+                                                          0.08       0.86 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_7/CO (HA_X1)
+                                                          0.06       0.92 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_8/CO (HA_X1)
+                                                          0.06       0.97 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_9/CO (HA_X1)
+                                                          0.06       1.03 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_10/CO (HA_X1)
+                                                          0.06       1.09 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_11/CO (HA_X1)
+                                                          0.06       1.15 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_12/CO (HA_X1)
+                                                          0.06       1.20 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_13/CO (HA_X1)
+                                                          0.06       1.26 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_14/CO (HA_X1)
+                                                          0.06       1.32 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_15/CO (HA_X1)
+                                                          0.06       1.38 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_16/CO (HA_X1)
+                                                          0.06       1.44 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_17/CO (HA_X1)
+                                                          0.06       1.49 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_18/CO (HA_X1)
+                                                          0.06       1.55 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_19/CO (HA_X1)
+                                                          0.06       1.61 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_20/CO (HA_X1)
+                                                          0.06       1.67 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_21/CO (HA_X1)
+                                                          0.06       1.72 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_22/CO (HA_X1)
+                                                          0.06       1.78 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_23/CO (HA_X1)
+                                                          0.06       1.85 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_24/CO (HA_X1)
+                                                          0.06       1.90 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/U1_1_25/Z (XOR2_X1)
+                                                          0.03       1.93 f
+  exe_stage/u_ALU/u_ALU_IN_GEN1/add_18_ni/SUM[25] (ALU_IN_GEN_1_DW01_inc_0)
+                                                          0.00       1.93 f
+  exe_stage/u_ALU/u_ALU_IN_GEN1/U58/ZN (NAND2_X1)         0.03       1.96 r
+  exe_stage/u_ALU/u_ALU_IN_GEN1/U3/ZN (OAI221_X1)         0.06       2.02 f
+  exe_stage/u_ALU/u_ALU_IN_GEN1/OUT[25] (ALU_IN_GEN_1)
+                                                          0.00       2.02 f
+  exe_stage/u_ALU/u_CSA/b_in[25] (CSA_32_1)               0.00       2.02 f
+  exe_stage/u_ALU/u_CSA/u_CLG/b[25] (CLG_1)               0.00       2.02 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG[25].u_PG/b0 (PG_7)
+                                                          0.00       2.02 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG[25].u_PG/U2/Z (XOR2_X1)
+                                                          0.09       2.11 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG[25].u_PG/P (PG_7)
+                                                          0.00       2.11 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG0[12].u_PG_NET0/p1 (PG_NET_53)
+                                                          0.00       2.11 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG0[12].u_PG_NET0/U3/ZN (AOI21_X1)
+                                                          0.05       2.16 r
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG0[12].u_PG_NET0/U2/ZN (INV_X1)
+                                                          0.03       2.19 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG0[12].u_PG_NET0/g_o (PG_NET_53)
+                                                          0.00       2.19 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG1[12].u_PG_NET1/g1 (PG_NET_38)
+                                                          0.00       2.19 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG1[12].u_PG_NET1/U3/ZN (AOI21_X1)
+                                                          0.05       2.24 r
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG1[12].u_PG_NET1/U2/ZN (INV_X1)
+                                                          0.03       2.27 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG1[12].u_PG_NET1/g_o (PG_NET_38)
+                                                          0.00       2.27 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG2[14].u_PG_NET2/g0 (PG_NET_22)
+                                                          0.00       2.27 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG2[14].u_PG_NET2/U1/ZN (AND2_X1)
+                                                          0.04       2.30 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG2[14].u_PG_NET2/U2/ZN (OR2_X1)
+                                                          0.06       2.36 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG2[14].u_PG_NET2/g_o (PG_NET_22)
+                                                          0.00       2.36 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG3[14].u_PG_NET2/g1 (PG_NET_10)
+                                                          0.00       2.36 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG3[14].u_PG_NET2/U2/ZN (AOI21_X1)
+                                                          0.05       2.41 r
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG3[14].u_PG_NET2/U3/ZN (INV_X1)
+                                                          0.02       2.43 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG3[14].u_PG_NET2/g_o (PG_NET_10)
+                                                          0.00       2.43 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG4[14].u_PG_NET2/g1 (PG_NET_2)
+                                                          0.00       2.43 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG4[14].u_PG_NET2/U2/ZN (AOI21_X1)
+                                                          0.05       2.48 r
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG4[14].u_PG_NET2/U3/ZN (INV_X1)
+                                                          0.02       2.51 f
+  exe_stage/u_ALU/u_CSA/u_CLG/BlockPG4[14].u_PG_NET2/g_o (PG_NET_2)
+                                                          0.00       2.51 f
+  exe_stage/u_ALU/u_CSA/u_CLG/C_BLOCK_1[14].u_G_C47/g0 (G_NET_1)
+                                                          0.00       2.51 f
+  exe_stage/u_ALU/u_CSA/u_CLG/C_BLOCK_1[14].u_G_C47/U2/ZN (AOI21_X1)
+                                                          0.04       2.54 r
+  exe_stage/u_ALU/u_CSA/u_CLG/C_BLOCK_1[14].u_G_C47/U1/ZN (INV_X1)
+                                                          0.02       2.57 f
+  exe_stage/u_ALU/u_CSA/u_CLG/C_BLOCK_1[14].u_G_C47/g_o (G_NET_1)
+                                                          0.00       2.57 f
+  exe_stage/u_ALU/u_CSA/u_CLG/c[15] (CLG_1)               0.00       2.57 f
+  exe_stage/u_ALU/u_CSA/U3/ZN (XNOR2_X1)                  0.05       2.62 f
+  exe_stage/u_ALU/u_CSA/U2/ZN (XNOR2_X1)                  0.06       2.68 f
+  exe_stage/u_ALU/u_CSA/s_out[31] (CSA_32_1)              0.00       2.68 f
+  exe_stage/u_ALU/OUT[31] (ALU)                           0.00       2.68 f
+  exe_stage/u_MUX_PC_EXE/A[31] (MUX21_1)                  0.00       2.68 f
+  exe_stage/u_MUX_PC_EXE/U68/ZN (AOI22_X1)                0.05       2.73 r
+  exe_stage/u_MUX_PC_EXE/U71/ZN (INV_X1)                  0.03       2.76 f
+  exe_stage/u_MUX_PC_EXE/OUT[31] (MUX21_1)                0.00       2.76 f
+  exe_stage/PC_EXE[31] (EXE)                              0.00       2.76 f
+  if_stage/PC_EXE[31] (IF)                                0.00       2.76 f
+  if_stage/mux31/in3[31] (MUX3TO1)                        0.00       2.76 f
+  if_stage/mux31/U35/ZN (NAND2_X1)                        0.03       2.79 r
+  if_stage/mux31/U8/ZN (OAI211_X1)                        0.04       2.83 f
+  if_stage/mux31/out[31] (MUX3TO1)                        0.00       2.83 f
+  if_stage/regpc/regin[31] (REG32_INNER_IF)               0.00       2.83 f
+  if_stage/regpc/U137/ZN (NAND2_X1)                       0.03       2.86 r
+  if_stage/regpc/U14/ZN (NAND2_X1)                        0.02       2.88 f
+  if_stage/regpc/dataout_reg[31]/D (DFF_X1)               0.01       2.89 f
+  data arrival time                                                  2.89
+
+  clock MY_CLK (rise edge)                                3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.07       2.93
+  if_stage/regpc/dataout_reg[31]/CK (DFF_X1)              0.00       2.93 r
+  library setup time                                     -0.04       2.89
+  data required time                                                 2.89
+  --------------------------------------------------------------------------
+  data required time                                                 2.89
+  data arrival time                                                 -2.89
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

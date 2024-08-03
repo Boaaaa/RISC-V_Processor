@@ -1,0 +1,62 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP4
+Date   : Thu Feb 22 18:53:45 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: u_mem_data/sram/clk0
+              (internal path startpoint clocked by MY_CLK)
+  Endpoint: u_mem_data/RDATA_i_reg[15]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (fall edge)                                2.65       2.65
+  clock network delay (ideal)                             0.00       2.65
+  input external delay                                    0.00       2.65 f
+  u_mem_data/sram/clk0 (sram_32_1024_freepdk45)           0.00       2.65 f
+  u_mem_data/sram/dout0[25] (sram_32_1024_freepdk45)      1.83       4.48 r
+  u_mem_data/U289/Z (CLKBUF_X1)                           0.24       4.72 r
+  u_mem_data/U45/ZN (XNOR2_X1)                            0.07       4.79 r
+  u_mem_data/U20/ZN (AND4_X2)                             0.07       4.86 r
+  u_mem_data/U11/ZN (AND4_X2)                             0.06       4.92 r
+  u_mem_data/U10/ZN (AND4_X1)                             0.07       4.99 r
+  u_mem_data/U307/ZN (AND2_X1)                            0.04       5.03 r
+  u_mem_data/U55/ZN (OAI21_X1)                            0.03       5.06 f
+  u_mem_data/U54/ZN (NAND2_X2)                            0.07       5.13 r
+  u_mem_data/U393/ZN (OAI22_X1)                           0.05       5.18 f
+  u_mem_data/RDATA_i_reg[15]/D (DFF_X1)                   0.01       5.19 f
+  data arrival time                                                  5.19
+
+  clock MY_CLK (rise edge)                                5.30       5.30
+  clock network delay (ideal)                             0.00       5.30
+  clock uncertainty                                      -0.07       5.23
+  u_mem_data/RDATA_i_reg[15]/CK (DFF_X1)                  0.00       5.23 r
+  library setup time                                     -0.04       5.19
+  data required time                                                 5.19
+  --------------------------------------------------------------------------
+  data required time                                                 5.19
+  data arrival time                                                 -5.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

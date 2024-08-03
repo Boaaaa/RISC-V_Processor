@@ -1,0 +1,32 @@
+
+main:     file format elf32-littleriscv
+
+
+Disassembly of section .data:
+
+10010000 <sS>:
+10010000:	0000                	.2byte	0x0
+10010002:	0000                	.2byte	0x0
+10010004:	fc00                	.2byte	0xfc00
+10010006:	ffff                	.2byte	0xffff
+10010008:	fe00                	.2byte	0xfe00
+1001000a:	ffff                	.2byte	0xffff
+1001000c:	ff00                	.2byte	0xff00
+1001000e:	ffff                	.2byte	0xffff
+
+Disassembly of section .sdata:
+
+10010010 <Lo>:
+10010010:	0000000f          	fence	unknown,unknown
+10010014:	ffec                	.2byte	0xffec
+10010016:	ffff                	.2byte	0xffff
+
+10010018 <Li>:
+10010018:	1f 00 00 00 	Address 0x0000000010010018 is out of bounds.
+
+1001001c:	 
+
+Disassembly of section .bss:
+
+1001001c <sE>:
+	...
